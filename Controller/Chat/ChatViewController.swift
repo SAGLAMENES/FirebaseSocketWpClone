@@ -7,8 +7,15 @@
 import UIKit
 class ChatCollectionViewController: UICollectionViewController {
     private let reuseIdentifier = "ChatCell"
-    private var messages : [String] = ["sampledatasadasd","sadasdasda","yorgunum"]
+    private var messages : [String] = ["sampledatasadasdskjajfsajkgjklasjklsgjksajkgjklasgjakjlsgkjlskjalgjklasjlgkjklsagjklasgjklkjlsagkjlasgkjlgasjklgskajljkglaskjlgasjkagsjksagjklljkgasjklas","sadasdasda","yorgunum"]
     
+    private lazy var customInputView  : CustomInputView = {
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        let inputView = CustomInputView(frame: frame)
+        return inputView
+    }()
+    
+    //MARK: -lifecycle
     init(){
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -26,6 +33,12 @@ class ChatCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         configureUI()
         // Do any additional setup after loading the view.
+    }
+    override var inputAccessoryView: UIView?{
+        get{return customInputView}
+    }
+    override var canBecomeFirstResponder: Bool{
+        return true
     }
 
     private func configureUI(){

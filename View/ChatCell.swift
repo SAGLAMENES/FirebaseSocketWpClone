@@ -33,7 +33,7 @@ class ChatCell: UICollectionViewCell{
     override init(frame: CGRect){
         super.init(frame: frame)
         addSubview(profileImageView)
-        profileImageView.anchor(left: leftAnchor,bottom: bottomAnchor,paddingLeft: 20)
+        profileImageView.anchor(top: topAnchor ,left: leftAnchor,bottom: bottomAnchor,paddingLeft: 20)
         
         addSubview(bubbleContainer)
         bubbleContainer.layer.cornerRadius = 12
@@ -46,15 +46,15 @@ class ChatCell: UICollectionViewCell{
         bubbleLeftAnchor = bubbleContainer.leftAnchor.constraint(equalTo: profileImageView.rightAnchor,constant: 12)
         bubbleLeftAnchor.isActive = false
         
-        bubbleRightAnchor = bubbleContainer.rightAnchor.constraint(equalTo: rightAnchor,constant: -12)
+        bubbleRightAnchor = bubbleContainer.rightAnchor.constraint(equalTo: rightAnchor,constant: -122)
         bubbleRightAnchor.isActive = false
         
         addSubview(dateLabel)
        dateLeftAnchor = dateLabel.leftAnchor.constraint(equalTo: bubbleContainer.rightAnchor, constant: 12)
-       dateLeftAnchor.isActive = false
+       dateLeftAnchor.isActive = true
       
        dateRightAnchor = dateLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -12)
-       dateRightAnchor.isActive = false
+       dateRightAnchor.isActive = true
         
         dateLabel.anchor(bottom: bottomAnchor)
         

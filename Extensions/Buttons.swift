@@ -31,3 +31,7 @@ extension UIButton{
         
     }
 }
+
+extension UIColor{
+        static var myCustomColor: UIColor = #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1)
+}

@@ -61,6 +61,8 @@
 		C5A262F82B4CF499003EBB62 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A262F72B4CF499003EBB62 /* UserCell.swift */; };
 		C5A262FB2B4CF948003EBB62 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A262FA2B4CF948003EBB62 /* ChatViewController.swift */; };
 		C5A262FD2B4CF9A3003EBB62 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A262FC2B4CF9A3003EBB62 /* ChatCell.swift */; };
+		C5A262FF2B542BE6003EBB62 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A262FE2B542BE6003EBB62 /* CustomInputView.swift */; };
+		C5A263012B542CAA003EBB62 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A263002B542CAA003EBB62 /* CustomTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		C5A262F72B4CF499003EBB62 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C5A262FA2B4CF948003EBB62 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		C5A262FC2B4CF9A3003EBB62 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		C5A262FE2B542BE6003EBB62 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		C5A263002B542CAA003EBB62 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 				C560FEB32B4BAE0900DE6E50 /* Label.swift */,
 				C560FEB52B4BAE1700DE6E50 /* TextField.swift */,
 				C5A262C12B4C5268003EBB62 /* CustomImageView.swift */,
+				C5A263002B542CAA003EBB62 /* CustomTextView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				C5A262BF2B4C5027003EBB62 /* ConversationCell.swift */,
 				C5A262F72B4CF499003EBB62 /* UserCell.swift */,
 				C5A262FC2B4CF9A3003EBB62 /* ChatCell.swift */,
+				C5A262FE2B542BE6003EBB62 /* CustomInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A263012B542CAA003EBB62 /* CustomTextView.swift in Sources */,
 				C560FE9D2B4BAD1000DE6E50 /* UserService.swift in Sources */,
 				C560FEA52B4BAD8600DE6E50 /* ConversationVC.swift in Sources */,
 				C560FEBD2B4BAE4A00DE6E50 /* VC.swift in Sources */,
@@ -385,6 +392,7 @@
 				C560FEB12B4BADED00DE6E50 /* RegisterViewModel.swift in Sources */,
 				C560FEA92B4BAD9F00DE6E50 /* RegisterVC.swift in Sources */,
 				C5A262FD2B4CF9A3003EBB62 /* ChatCell.swift in Sources */,
+				C5A262FF2B542BE6003EBB62 /* CustomInputView.swift in Sources */,
 				C560FE892B4BACCE00DE6E50 /* AppDelegate.swift in Sources */,
 				C560FEAC2B4BADC100DE6E50 /* User.swift in Sources */,
 				C560FE8B2B4BACCE00DE6E50 /* SceneDelegate.swift in Sources */,
