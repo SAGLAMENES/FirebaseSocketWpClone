@@ -44,22 +44,13 @@ struct UserService {
         var users = [User]()
         
         User_Collection.getDocuments { snapshot, error in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
+            guard let snapshot = snapshot else {
+                print("Error: ")
                 return
             }
-            
-            guard let documents = snapshot?.documents else {
-                print("Data not found")
-                return
-            }
-            
-            for document in documents {
-                let user = User(dictionary: document.data())
-                users.append(user)
-            }
-            
+            let users = snapshot.documents.map({User(dictionary: $0.data())})
             completion(users)
+           
         }
     }
     /* User_Collection.document(uid).addSnapshotListener { snapshot, error in

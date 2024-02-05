@@ -6,9 +6,14 @@
 //
 
 import UIKit
-
+import SDWebImage
 class UserCell: UITableViewCell {
 
+    var viewModel:UserViewModel?{
+        didSet{
+            configure()
+        }
+    }
     private let profileImageView = CustomImageView(width: 48   ,height: 48,backgroundColor: .lightGray,cornerRadius: 24)
     private let userName = CustomLabel(text: "Username", labelFont: .boldSystemFont(ofSize: 17))
     private let fullname = CustomLabel(text: "fullname", labelColor: .lightGray)
@@ -32,5 +37,12 @@ class UserCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configure(){
+        guard let viewModel = viewModel else {return}
+        self.fullname.text = viewModel.fullname
+        self.userName.text = viewModel.username
+        self.profileImageView.sd_setImage(with:viewModel.profileImageUrl)
     }
 }

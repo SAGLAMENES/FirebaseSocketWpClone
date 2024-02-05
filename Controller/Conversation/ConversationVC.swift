@@ -63,8 +63,13 @@ class ConversationViewController: UIViewController{
     
     @objc func handleNewChat(){
         let controller = NewChatVC()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         present(nav, animated: true)
+    }
+    private func openChat(currentUser: User,otherUser: User){
+        let controller = ChatCollectionViewController(currentUser: currentUser, otherUser: otherUser)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -78,8 +83,17 @@ extension ConversationViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = ChatCollectionViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        
     }
+    
+}
+
+extension ConversationViewController: NewChatVCDelegate{
+    func controller(_ controller: NewChatVC, wantsToStartChatWith otherUser: User) {
+        controller.dismiss(animated: true)
+        print(user.fullname)
+        openChat(currentUser: user, otherUser: otherUser)
+    }
+  
     
 }

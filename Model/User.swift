@@ -19,7 +19,7 @@ struct User {
         self.username = dictionary["username"] as? String ?? ""
         self.fullname = dictionary["fullname"] as? String ?? ""
         self.uid = dictionary["uid"] as? String ?? ""
-        self.profile_Image = dictionary["profile_Image"] as? String ?? ""
+        self.profile_Image = dictionary["profile_image"] as? String ?? ""
 
     }
 }

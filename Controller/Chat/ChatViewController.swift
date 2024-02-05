@@ -15,9 +15,12 @@ class ChatCollectionViewController: UICollectionViewController {
         inputView.delegate = self
         return inputView
     }()
-    
+    private var currentUser : User
+    private var otherUser : User
     //MARK: -lifecycle
-    init(){
+    init(currentUser: User, otherUser: User){
+        self.currentUser = currentUser
+        self.otherUser = otherUser
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
@@ -43,7 +46,7 @@ class ChatCollectionViewController: UICollectionViewController {
     }
 
     private func configureUI(){
-        
+        title = otherUser.fullname
         collectionView.register(ChatCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
 
@@ -92,6 +95,9 @@ extension ChatCollectionViewController: UICollectionViewDelegateFlowLayout{
 extension ChatCollectionViewController: CustomInputViewDelegate{
     func inputView(_ view: CustomInputView, wantUploadMessage message: String) {
         print(message)
+        MessageServices.uploadMessage(message: message, currentUser: currentUser , otherUser: otherUser) { _ in
+            //
+        }
         messages.append(message)
         view.clearTextView()
         collectionView.reloadData()
